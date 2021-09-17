@@ -14,7 +14,9 @@ class FoundationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/gus_foundation.php', 'gus_foundation'
+        );
     }
 
     /**
