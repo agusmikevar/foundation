@@ -43,6 +43,10 @@ class MacroServiceProvider extends ServiceProvider
 
         $kernels = $this->getMacroKernels();
         foreach ($kernels as $kernel) {
+            if ( ! class_exists($kernel)) {
+                continue;
+            }
+            
             $blueprints = $kernel::$blueprints;
 
             foreach ($blueprints as $methodName => $blueprintClass) {
