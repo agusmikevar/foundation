@@ -48,7 +48,7 @@ class EloquentServiceProvider extends ServiceProvider
      */
     private function getEloquentKernels()
     {
-        $kernels = config('gus_foundation.eloquent.kernel');
+        $kernels = config('gus_foundation.eloquent.kernel', []);
         if (is_string($kernels)) $kernels = [$kernels];
         return $kernels;
     }

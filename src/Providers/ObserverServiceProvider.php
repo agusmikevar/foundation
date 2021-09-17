@@ -49,7 +49,7 @@ class ObserverServiceProvider extends ServiceProvider
      */
     private function getObserverKernels()
     {
-        $kernels = config('gus_foundation.observer.kernel');
+        $kernels = config('gus_foundation.observer.kernel', []);
         if (is_string($kernels)) $kernels = [$kernels];
         return $kernels;
     }

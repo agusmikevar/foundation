@@ -108,7 +108,7 @@ class MacroServiceProvider extends ServiceProvider
      */
     private function getMacroKernels()
     {
-        $kernels = config('gus_foundation.macro.kernel');
+        $kernels = config('gus_foundation.macro.kernel', []);
         if (is_string($kernels)) $kernels = [$kernels];
         return $kernels;
     }
