@@ -15,7 +15,7 @@ class FoundationServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/gus_foundation.php', 'gus_foundation'
+            __DIR__.'/../../config/gus_foundation.php', 'gus_foundation'
         );
     }
 
@@ -27,7 +27,7 @@ class FoundationServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/gus_foundation.php' => config_path('gus_foundation.php'),
+            __DIR__.'/../../config/gus_foundation.php' => config_path('gus_foundation.php'),
         ]);
     }
 }
