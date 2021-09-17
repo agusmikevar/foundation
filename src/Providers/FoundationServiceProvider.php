@@ -5,7 +5,7 @@ namespace Gus\Foundation\Providers;
 use Illuminate\Support\ServiceProvider;
 use LogicException;
 
-class ObserverServiceProvider extends ServiceProvider
+class FoundationServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
