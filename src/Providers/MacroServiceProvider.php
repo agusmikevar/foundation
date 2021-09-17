@@ -75,6 +75,10 @@ class MacroServiceProvider extends ServiceProvider
 
         $kernels = $this->getMacroKernels();
         foreach ($kernels as $kernel) {
+            if ( ! class_exists($kernel)) {
+                continue;
+            }
+            
             $rules = $kernel::$rules;
 
             foreach ($rules as $ruleName => $ruleClass) {

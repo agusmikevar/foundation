@@ -27,6 +27,10 @@ class ObserverServiceProvider extends ServiceProvider
     {
         $kernels = $this->getObserverKernels();
         foreach ($kernels as $kernel) {
+            if ( ! class_exists($kernel)) {
+                continue;
+            }
+
             $observers = $kernel::observers();
 
             foreach ($observers as $model => $observer) {
