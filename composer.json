@@ -25,7 +25,8 @@
             "providers": [
                 "Gus\\Foundation\\Providers\\FoundationServiceProvider",
                 "Gus\\Foundation\\Providers\\MacroServiceProvider",
-                "Gus\\Foundation\\Providers\\ObserverServiceProvider"
+                "Gus\\Foundation\\Providers\\ObserverServiceProvider",
+                "Gus\\Foundation\\Providers\\EloquentServiceProvider"
             ]
         }
     }
