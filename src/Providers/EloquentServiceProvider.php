@@ -34,10 +34,9 @@ class EloquentServiceProvider extends ServiceProvider
     {
         $kernels = $this->getEloquentKernels();
         foreach ($kernels as $kernel) {
-            if ( ! class_exists($kernel)) {
-                continue;
-            }
-            dd($morphAliasses);
+            // if ( ! class_exists($kernel)) {
+            //     continue;
+            // }
             
             $morphAliasses = $kernel::$relationMorphAliasses;
             Relation::morphMap($morphAliasses);
