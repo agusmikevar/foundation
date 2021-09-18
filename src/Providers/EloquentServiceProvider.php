@@ -37,6 +37,7 @@ class EloquentServiceProvider extends ServiceProvider
             if ( ! class_exists($kernel)) {
                 continue;
             }
+            dd($morphAliasses);
             
             $morphAliasses = $kernel::$relationMorphAliasses;
             Relation::morphMap($morphAliasses);
