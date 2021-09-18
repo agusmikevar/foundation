@@ -35,7 +35,7 @@ class Authentication
      */
     public static function getInstance(string $type, array $refs)
     {
-        $model = config('Gus_foundation.http.request.'.$type.'.model');
+        $model = config('gus_foundation.http.request.'.$type.'.model');
         if ( ! (new $model) instanceof AuthModel) {
             $exception = new AuthModelException;
             $exception->problem('model_has_no_contract');
