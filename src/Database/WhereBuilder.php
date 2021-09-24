@@ -203,6 +203,20 @@ class WhereBuilder
     /**
      * @return void
      */
+    public function idArrayMode()
+    {
+        $queueIndex = $this->queueIndex;
+        $queueColumn = $this->queueColumn;
+        $request = $this->request;
+
+        $this->wheres[] = [
+            fn ($query) => $query->whereIn($queueColumn, $this->value($queueIndex, []))
+        ];
+    }
+
+    /**
+     * @return void
+     */
     public function booleanToTimestampMode()
     {
         $queueIndex = $this->queueIndex;
@@ -244,6 +258,24 @@ class WhereBuilder
                     return $query;
                 }
             )
+        ];
+    }
+
+    /**
+     * @return void
+     */
+    public function dateBetweenMode()
+    {
+        $queueIndex = $this->queueIndex;
+        $queueColumn = $this->queueColumn;
+        $startIndex = $queueIndex[0];
+        $endIndex = $queueIndex[1];
+
+        $this->wheres[] = [
+            fn ($query) => 
+                $query->whereDateBetween($queueColumn,
+                    [$this->value($startIndex, date('Y-m-d')), $this->value($endIndex, date('Y-m-d'))]
+                )
         ];
     }
 
